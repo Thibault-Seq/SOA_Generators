@@ -1,0 +1,76 @@
+﻿<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="Types" type = "System.String[]" #>
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+
+<#
+string strArguments = "";
+string strInvokeArguments = "";
+string strValues = "";
+string strValuesSeparated = "";
+
+
+
+for(int i = 0;i<Types.Length;i++)
+{
+
+string typeUpperCased = Types[i];
+char upperStart = char.ToUpper(typeUpperCased[0]);
+typeUpperCased = typeUpperCased.Remove(0,1);
+typeUpperCased = upperStart+typeUpperCased;
+
+strValues +=  typeUpperCased;
+strValuesSeparated +=  Types[i];
+
+strArguments += Types[i]+ " val"+i.ToString();
+strInvokeArguments += "val"+i.ToString();
+if(i < Types.Length-1)
+{
+strArguments += ",";
+strInvokeArguments += ",";
+strValuesSeparated += ",";
+
+}
+}
+#>
+
+	[System.Serializable]
+	public class <#= strValues#>_UnityEvent : UnityEvent<<#=strValuesSeparated#>>
+	{
+
+	}
+	#if UNITY_EDITOR
+namespace SOA.Events
+{
+
+	public class SOA_Listener_<#=strValues#> : MonoBehaviour
+	{
+		public SOA_Event_<#=strValues#> Event;
+
+		public <#= strValues#>_UnityEvent responce;
+
+		private void OnEnable()
+		{
+			Event.RegisterListener(this);
+		}
+
+		private void OnDisable()
+		{
+			Event.UnregisterListener(this);
+		}
+
+		public void OnEventRaised(<#=strArguments#>)
+		{
+			responce.Invoke(<#=strInvokeArguments#>);
+		}
+	}
+}
+
+#endif

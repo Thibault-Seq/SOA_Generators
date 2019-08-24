@@ -1,0 +1,70 @@
+﻿<#@ template language="C#" linePragmas = "false" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="Types" type = "System.String[]" #>
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+#if UNITY_EDITOR
+namespace SOA.Events
+{
+<#
+string strArguments = "";
+string strRaiseArguments = "";
+string strValues = "";
+
+
+for(int i = 0;i<Types.Length;i++)
+{
+string typeUpperCased = Types[i];
+char upperStart = char.ToUpper(typeUpperCased[0]);
+typeUpperCased = typeUpperCased.Remove(0,1);
+typeUpperCased = upperStart+typeUpperCased;
+
+strValues +=  typeUpperCased;
+strArguments += Types[i]+ " val"+i.ToString();
+strRaiseArguments += "val"+i.ToString();
+if(i < Types.Length-1)
+{
+strArguments += ",";
+strRaiseArguments += ",";
+
+}
+}
+
+
+
+#>
+
+	[CreateAssetMenu(menuName = "SOA/Events/<#=strValues#>")]
+	public class SOA_Event_<#=strValues#> : ScriptableObject
+	{
+		private readonly List<SOA_Listener_<#=strValues#>> eventListeners =
+					 new List<SOA_Listener_<#=strValues#>>();
+
+		public void Raise(<#=strArguments#>)
+		{
+			for (int i = eventListeners.Count - 1; i >= 0; i--)
+				eventListeners[i].OnEventRaised(<#=strRaiseArguments#>);
+		}
+
+		public void RegisterListener(SOA_Listener_<#=strValues#> listener)
+		{
+			if (!eventListeners.Contains(listener))
+				eventListeners.Add(listener);
+		}
+
+		public void UnregisterListener(SOA_Listener_<#=strValues#> listener)
+		{
+			if (eventListeners.Contains(listener))
+				eventListeners.Remove(listener);
+		}
+	}
+}
+
+#endif

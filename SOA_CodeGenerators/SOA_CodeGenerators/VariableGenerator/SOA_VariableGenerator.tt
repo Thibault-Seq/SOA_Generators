@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" linePragmas = "false" #>
+<#@ assembly name="System.Core" #>
+<#@ parameter name="Variable" type = "System.String" #>
+
+using UnityEngine;
+
+#if UNITY_EDITOR
+namespace SOA.Variables
+{
+    [CreateAssetMenu(menuName = "SOA/Variables/<#=Variable#>")]
+    public class SOA_Variables_<#=Variable#> : ScriptableObject
+    {
+        public <#=Variable#> DefaultValue;
+
+        private <#=Variable#> currentValueInternal;
+
+        public <#=Variable#> currentValue
+        {
+            get { return currentValueInternal; }
+            set { currentValueInternal = value; }
+        }
+
+		private void OnEnable()
+        {
+            currentValueInternal = DefaultValue;
+        }
+    }
+}
+#endif
