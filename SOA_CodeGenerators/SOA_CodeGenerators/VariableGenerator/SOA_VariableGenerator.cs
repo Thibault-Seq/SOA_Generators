@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA_CodeGenerators.VariableGenerator
+namespace SOA.CodeGenerators.VariableGenerator
 {
     using System;
     

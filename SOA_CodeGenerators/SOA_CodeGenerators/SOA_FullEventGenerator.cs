@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SOA_CodeGenerators.EventGenerator;
-using SOA_CodeGenerators.ListenerGenerator;
+using SOA.CodeGenerators.EventGenerator;
+using SOA.CodeGenerators.ListenerGenerator;
 using UnityEditor;
 
 #if UNITY_EDITOR

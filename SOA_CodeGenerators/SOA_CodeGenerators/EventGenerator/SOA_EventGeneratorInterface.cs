@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 
-namespace SOA_CodeGenerators.EventGenerator
+namespace SOA.CodeGenerators.EventGenerator
 {
     public partial class SOA_EventGeneratorInterface : SOA_EventGenerator
     {

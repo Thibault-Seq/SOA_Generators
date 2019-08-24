@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA_CodeGenerators.ListenerGenerator
+namespace SOA.CodeGenerators.ListenerGenerator
 {
     using System.Linq;
     using System.Text;
