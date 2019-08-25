@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA.CodeGenerators.VariableGenerator
+namespace SOA.CodeGenerators
 {
     using System;
     
@@ -22,8 +22,8 @@ namespace SOA.CodeGenerators.VariableGenerator
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing UnityEngine;\r\n\r\n#if UNITY_EDITOR\r\nnamespace SOA.Variables\r\n{\r\n    [Create" +
-                    "AssetMenu(menuName = \"SOA/Variables/");
+            this.Write("\r\nusing UnityEngine;\r\n\r\n\r\nnamespace SOA.Variables\r\n{\r\n    [CreateAssetMenu(menuNa" +
+                    "me = \"SOA/Variables/");
             this.Write(this.ToStringHelper.ToStringWithCulture(Variable));
             this.Write("\")]\r\n    public class SOA_Variables_");
             this.Write(this.ToStringHelper.ToStringWithCulture(Variable));
@@ -36,7 +36,7 @@ namespace SOA.CodeGenerators.VariableGenerator
             this.Write(" currentValue\r\n        {\r\n            get { return currentValueInternal; }\r\n     " +
                     "       set { currentValueInternal = value; }\r\n        }\r\n\r\n\t\tprivate void OnEnab" +
                     "le()\r\n        {\r\n            currentValueInternal = DefaultValue;\r\n        }\r\n  " +
-                    "  }\r\n}\r\n#endif");
+                    "  }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
 

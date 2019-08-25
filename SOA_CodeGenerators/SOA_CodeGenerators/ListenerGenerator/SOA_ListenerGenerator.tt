@@ -46,7 +46,6 @@ strValuesSeparated += ",";
 	{
 
 	}
-	#if UNITY_EDITOR
 namespace SOA.Events
 {
 
@@ -73,4 +72,3 @@ namespace SOA.Events
 	}
 }
 
-#endif

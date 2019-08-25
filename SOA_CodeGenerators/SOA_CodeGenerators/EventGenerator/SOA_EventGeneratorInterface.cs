@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 
-namespace SOA.CodeGenerators.EventGenerator
+#if UNITY_EDITOR
+namespace SOA.CodeGenerators
 {
     public partial class SOA_EventGeneratorInterface : SOA_EventGenerator
     {
@@ -43,3 +44,4 @@ namespace SOA.CodeGenerators.EventGenerator
         }
     }
 }
+#endif

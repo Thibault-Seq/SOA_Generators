@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-#if UNITY_EDITOR
+
 namespace SOA.Variables
 {
     [CreateAssetMenu(menuName = "SOA/Variables/<#=Variable#>")]
@@ -26,4 +26,3 @@ namespace SOA.Variables
         }
     }
 }
-#endif

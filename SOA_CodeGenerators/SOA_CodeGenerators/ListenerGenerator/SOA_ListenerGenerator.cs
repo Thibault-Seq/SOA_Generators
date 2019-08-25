@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA.CodeGenerators.ListenerGenerator
+namespace SOA.CodeGenerators
 {
     using System.Linq;
     using System.Text;
@@ -18,7 +18,7 @@ namespace SOA.CodeGenerators.ListenerGenerator
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+    #line 1 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class SOA_ListenerGenerator : SOA_ListenerGeneratorBase
     {
@@ -31,7 +31,7 @@ namespace SOA.CodeGenerators.ListenerGenerator
             this.Write("\r\n\r\nusing System.Collections;\r\nusing System.Collections.Generic;\r\nusing UnityEngi" +
                     "ne;\r\nusing UnityEngine.Events;\r\n\r\n\r\n");
             
-            #line 13 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 13 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
 
 string strArguments = "";
 string strInvokeArguments = "";
@@ -67,36 +67,35 @@ strValuesSeparated += ",";
             #line hidden
             this.Write("\r\n\t[System.Serializable]\r\n\tpublic class ");
             
-            #line 45 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 45 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strValues));
             
             #line default
             #line hidden
             this.Write("_UnityEvent : UnityEvent<");
             
-            #line 45 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 45 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strValuesSeparated));
             
             #line default
             #line hidden
-            this.Write(">\r\n\t{\r\n\r\n\t}\r\n\t#if UNITY_EDITOR\r\nnamespace SOA.Events\r\n{\r\n\r\n\tpublic class SOA_List" +
-                    "ener_");
+            this.Write(">\r\n\t{\r\n\r\n\t}\r\nnamespace SOA.Events\r\n{\r\n\r\n\tpublic class SOA_Listener_");
             
-            #line 53 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 52 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strValues));
             
             #line default
             #line hidden
             this.Write(" : MonoBehaviour\r\n\t{\r\n\t\tpublic SOA_Event_");
             
-            #line 55 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 54 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strValues));
             
             #line default
             #line hidden
             this.Write(" Event;\r\n\r\n\t\tpublic ");
             
-            #line 57 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 56 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strValues));
             
             #line default
@@ -105,23 +104,23 @@ strValuesSeparated += ",";
                     "r(this);\r\n\t\t}\r\n\r\n\t\tprivate void OnDisable()\r\n\t\t{\r\n\t\t\tEvent.UnregisterListener(th" +
                     "is);\r\n\t\t}\r\n\r\n\t\tpublic void OnEventRaised(");
             
-            #line 69 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 68 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strArguments));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t{\r\n\t\t\tresponce.Invoke(");
             
-            #line 71 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+            #line 70 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(strInvokeArguments));
             
             #line default
             #line hidden
-            this.Write(");\r\n\t\t}\r\n\t}\r\n}\r\n\r\n#endif");
+            this.Write(");\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "A:\Perso\SOA_Generators\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
+        #line 1 "A:\Perso\SOA\SOA_CodeGenerators\SOA_CodeGenerators\ListenerGenerator\SOA_ListenerGenerator.tt"
 
 private string[] _TypesField;
 

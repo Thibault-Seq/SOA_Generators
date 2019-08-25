@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 
-namespace SOA.CodeGenerators.ListenerGenerator
+#if UNITY_EDITOR
+namespace SOA.CodeGenerators
 {
     public partial class SOA_ListenerGeneratorInterface:SOA_ListenerGenerator
     {
@@ -43,3 +44,4 @@ namespace SOA.CodeGenerators.ListenerGenerator
         }
     }
 }
+#endif

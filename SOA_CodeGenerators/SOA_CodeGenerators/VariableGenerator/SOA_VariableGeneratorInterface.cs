@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 
-namespace SOA.CodeGenerators.VariableGenerator
+#if UNITY_EDITOR
+namespace SOA.CodeGenerators
 {
 
     public partial class SOA_VariableGeneratorInterface : SOA_VariableGenerator
@@ -36,3 +37,4 @@ namespace SOA.CodeGenerators.VariableGenerator
         }
     }
 }
+#endif

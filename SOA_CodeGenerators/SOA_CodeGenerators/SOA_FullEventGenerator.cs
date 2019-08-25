@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SOA.CodeGenerators.EventGenerator;
-using SOA.CodeGenerators.ListenerGenerator;
 using UnityEditor;
 
 #if UNITY_EDITOR
-namespace SOA_CodeGenerators
+namespace SOA.CodeGenerators
 {
     public class SOA_FullEventGenerator
     {
