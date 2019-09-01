@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA_CodeGenerators.EventGenerator
+namespace SOA.CodeGenerators
 {
     using System.Linq;
     using System.Text;
