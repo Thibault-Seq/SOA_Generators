@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SOA.CodeGenerators
+namespace SOA_CodeGenerators.EventGenerator
 {
     using System.Linq;
     using System.Text;
@@ -26,7 +26,7 @@ namespace SOA.CodeGenerators
         public virtual string TransformText()
         {
             this.Write("\r\n\r\nusing System.Collections;\r\nusing System.Collections.Generic;\r\nusing UnityEngi" +
-                    "ne;\r\n\r\n#if UNITY_EDITOR\r\nnamespace SOA.Events\r\n{\r\n");
+                    "ne;\r\n\r\nnamespace SOA.Events\r\n{\r\n");
 
 string strArguments = "";
 string strRaiseArguments = "";
@@ -73,7 +73,7 @@ strRaiseArguments += ",";
                     "dd(listener);\r\n\t\t}\r\n\r\n\t\tpublic void UnregisterListener(SOA_Listener_");
             this.Write(this.ToStringHelper.ToStringWithCulture(strValues));
             this.Write(" listener)\r\n\t\t{\r\n\t\t\tif (eventListeners.Contains(listener))\r\n\t\t\t\teventListeners.Re" +
-                    "move(listener);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n#endif");
+                    "move(listener);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
 
